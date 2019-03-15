@@ -6,6 +6,8 @@ import { diffProps } from './props';
 import { assign } from '../util';
 import options from '../options';
 
+
+
 /**
  * Diff two virtual nodes and apply proper changes to the DOM
  * @param {import('../internal').PreactElement | Text} dom The DOM element representing
@@ -158,7 +160,7 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 				applyRef(newVNode.ref, dom, ancestorComponent);
 			}
 		}
-
+		// TODO: WHY do we reassign it ???
 		newVNode._dom = dom;
 
 		if (c!=null) {
@@ -231,11 +233,14 @@ function diffElementNodes(dom, newVNode, oldVNode, context, isSvg, excessDomChil
 	}
 
 	if (dom==null) {
-		dom = newVNode.type===null ? document.createTextNode(newVNode.text) : isSvg ? document.createElementNS('http://www.w3.org/2000/svg', newVNode.type) : document.createElement(newVNode.type);
+		dom = newVNode.type === null ?
+		 document.createTextNode(newVNode.text) : isSvg ?
+		 document.createElementNS('http://www.w3.org/2000/svg', newVNode.type) : document.createElement(newVNode.type);
 
 		// we created a new parent, so none of the previously attached children can be reused:
 		excessDomChildren = null;
 	}
+	// TODO: We assign it here
 	newVNode._dom = dom;
 
 	if (newVNode.type===null) {

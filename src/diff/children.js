@@ -23,6 +23,7 @@ export function diffChildren(parentDom, newParentVNode, oldParentVNode, context,
 		nextDom, sibDom, focus,
 		childDom;
 
+													// TODO Why We do this below
 	let newChildren = newParentVNode._children || toChildArray(newParentVNode.props.children, newParentVNode._children=[], coerceToVNode);
 	let oldChildren = oldParentVNode!=null && oldParentVNode!=EMPTY_OBJ && oldParentVNode._children || EMPTY_ARR;
 

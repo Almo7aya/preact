@@ -10,6 +10,8 @@ import options from './options';
   */
 export function createElement(type, props, children) {
 	if (props==null) props = {};
+
+	// TODO: Improve the code below with banchmarks
 	if (arguments.length>3) {
 		children = [children];
 		for (let i=3; i<arguments.length; i++) {
