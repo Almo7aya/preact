@@ -6,8 +6,6 @@ import { diffProps } from './props';
 import { assign, removeNode } from '../util';
 import options from '../options';
 
-
-
 /**
  * Diff two virtual nodes and apply proper changes to the DOM
  * @param {import('../internal').PreactElement | Text} dom The DOM element representing
