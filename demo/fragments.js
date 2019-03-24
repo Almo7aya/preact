@@ -1,4 +1,4 @@
-import { createElement, Component, Fragment } from 'preact';
+import { createElement, Component, Fragment } from '../';
 
 export default class extends Component {
 

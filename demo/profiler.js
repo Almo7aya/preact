@@ -1,4 +1,4 @@
-import { createElement, Component, options } from 'preact';
+import { createElement, Component, options } from '../';
 
 function getPrimes(max) {
 	let sieve = [], i, j, primes = [];

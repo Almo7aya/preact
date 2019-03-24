@@ -1,4 +1,4 @@
-import { createElement, render, hydrate, Component, options, Fragment } from 'preact';
+import { createElement, render, hydrate, Component, options, Fragment } from '../';
 // import renderToString from 'preact-render-to-string';
 import './style.scss';
 import { Router, Link } from './router';

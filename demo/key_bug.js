@@ -1,4 +1,4 @@
-import { createElement, Component } from 'preact';
+import { createElement, Component } from '../';
 
 function Foo(props) {
 	return <div>This is: {props.children}</div>;

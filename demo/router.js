@@ -1,4 +1,4 @@
-import { Component, toChildArray } from "preact";
+import { Component, toChildArray } from '../';
 
 let updateRouter;
 
