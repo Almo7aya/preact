@@ -30,7 +30,17 @@ export function diffChildren(parentDom, newParentVNode, oldParentVNode, context,
 
 	let oldChildrenLength = oldChildren.length;
 
-	childDom = oldChildrenLength ? oldChildren[0] && oldChildren[0]._dom : null;
+	// childDom = oldChildrenLength ? oldChildren[0] && oldChildren[0]._dom : null;
+
+	outer: if (oldChildrenLength) {
+		for (i = 0; i< oldChildrenLength; i++) {
+			childDom =  oldChildren[i] ? oldChildren[i]._dom : null;
+			if (childDom) break outer;
+		}
+	}
+	else {
+		childDom = null;
+	}
 
 	// TODO move this to create dom function
 	if (excessDomChildren!=null) {

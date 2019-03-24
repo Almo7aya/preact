@@ -120,9 +120,9 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 			oldProps = c.props;
 			if (!oldState) oldState = c.state;
 
-			oldContext = c.context = cctx;  // TODO ??
-			c.props = newVNode.props;  // TODO ??
-			c.state = s;  // TODO ??
+			oldContext = c.context = cctx;  // TODO // not really
+			c.props = newVNode.props;  // TODO // used in setting the new props
+			c.state = s;  // TODO // used in setting the new state
 
 			if (options.render) options.render(newVNode);
 
