@@ -31,6 +31,8 @@ export function diffChildren(parentDom, newParentVNode, oldParentVNode, context,
 	let oldChildrenLength = oldChildren.length;
 
 	childDom = oldChildrenLength ? oldChildren[0] && oldChildren[0]._dom : null;
+
+	// TODO move this to create dom function
 	if (excessDomChildren!=null) {
 		for (i = 0; i < excessDomChildren.length; i++) {
 			if (excessDomChildren[i]!=null) {
@@ -41,6 +43,7 @@ export function diffChildren(parentDom, newParentVNode, oldParentVNode, context,
 	}
 
 	for (i=0; i<newChildren.length; i++) {
+		// TODO Why We do this below
 		childVNode = newChildren[i] = coerceToVNode(newChildren[i]);
 		oldVNode = index = null;
 

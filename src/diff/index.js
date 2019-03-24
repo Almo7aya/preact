@@ -78,7 +78,7 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 				c._ancestorComponent = ancestorComponent;
 				if (provider) provider.sub(c);
 
-				c.props = newVNode.props;
+				c.props = newVNode.props; // to set the props as the old props
 				if (!c.state) c.state = {};
 				c.context = cctx;
 				c._context = context;
@@ -122,9 +122,9 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 			oldProps = c.props;
 			if (!oldState) oldState = c.state;
 
-			oldContext = c.context = cctx;
-			c.props = newVNode.props;
-			c.state = s;
+			oldContext = c.context = cctx;  // TODO ??
+			c.props = newVNode.props;  // TODO ??
+			c.state = s;  // TODO ??
 
 			if (options.render) options.render(newVNode);
 
@@ -160,7 +160,8 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 				applyRef(newVNode.ref, dom, ancestorComponent);
 			}
 		}
-		// TODO: WHY do we reassign it ???
+		// // TODO: WHY do we reassign it ???
+		// TODO: To add the dom to any vnode used for functionl component
 		newVNode._dom = dom;
 
 		if (c!=null) {
@@ -240,7 +241,7 @@ function diffElementNodes(dom, newVNode, oldVNode, context, isSvg, excessDomChil
 		// we created a new parent, so none of the previously attached children can be reused:
 		excessDomChildren = null;
 	}
-	// TODO: We assign it here
+	// TODO: We assign it here??? shall remove ?
 	newVNode._dom = dom;
 
 	if (newVNode.type===null) {
